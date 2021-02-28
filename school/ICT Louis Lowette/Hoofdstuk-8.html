@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>lay out aanpassen</title>
+</head>
+
+<body id="body">
+    <h1>Lay out aanpassen</h1>
+    <a href="index.html" target="_self">back</a>
+    <p id="p">schrijf</p>
+    <input type="range" min="50" max="400" onmouseup="txt();" id="value">
+    <p>
+    <button onclick="color();" id="button">dark mode</button>
+     <button onclick="light();" id="button">light mode</button>
+    <button onclick="random();">Random color</button>
+    <script>
+        var doc = document.getElementById("body");
+        var dark = false;
+
+        function color(){
+                doc.style.backgroundColor = "black";
+                doc.style.color = "white";
+        }
+            function light(){
+                doc.style.backgroundColor = "white";
+                doc.style.color = "black";
+        }
+
+        function txt() {
+            var slider = document.getElementById("value").value;
+            console.log(slider);
+            doc.style.fontSize = slider + "%";
+        }
+        
+        
+        function random() {
+        var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
+        bg_colour = "#" + ("000000" + bg_colour).slice(-6);
+            
+        doc.style.backgroundColor = bg_colour;
+        
+            console.log(bg_colour);
+            
+        }
+    </script>
+</body>
+
+</html>

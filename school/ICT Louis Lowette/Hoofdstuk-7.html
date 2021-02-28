@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Louis Lowette</title>
+    </head>
+<body>
+    <input type="text" id="input" placeholder="blad, steen, schaar">
+    <button type="button" onclick=script();>start</button>
+    
+        <p id="antwoord"></p>
+        
+        <script>
+        function script(){
+            var input = document.getElementById("input").value;
+            var antwoord;
+            var random= Math.random();
+            
+            
+            if (random <= 0.33){
+                antwoord = "blad";
+                document.getElementById("antwoord").innerHTML += antwoord + "<p>";
+            }
+            else if (random <= 0.66){
+                antwoord = "steen";
+                document.getElementById("antwoord").innerHTML += antwoord + "<p>";
+            }
+            else  if (random <= 1){
+                antwoord = "schaar";
+                document.getElementById("antwoord").innerHTML += antwoord + "<p>";
+            }
+            
+            
+            if (antwoord == input){
+                document.getElementById("antwoord").innerHTML += "gelijkstand <p>";
+            }
+            else if (antwoord == "steen" && input == "blad"){
+                document.getElementById("antwoord").innerHTML += "Jij wint <p>";
+            }
+            else if (antwoord == "schaar" && input == "steen"){
+                document.getElementById("antwoord").innerHTML += "Jij wint <p>";
+            }
+            else if (antwoord == "blad" && input == "schaar"){
+                document.getElementById("antwoord").innerHTML += "Jij wint <p>";
+            }
+            else if (antwoord == "blad" && input == "steen"){
+                document.getElementById("antwoord").innerHTML += "Jij verliest <p>";
+            }
+            else if (antwoord == "steen" && input == "schaar"){
+                document.getElementById("antwoord").innerHTML += "Jij verliest <p>";
+            }
+            else if (antwoord == "schaar" && input == "blad"){
+                document.getElementById("antwoord").innerHTML += "Jij verliest <p>";
+            }
+            else {
+                document.getElementById("text").innerHTML += "error <p>";
+            }
+        }
+    </script>
+    </body>
+</html>

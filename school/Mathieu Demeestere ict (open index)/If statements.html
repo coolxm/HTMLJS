@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <title>Blad steen schaar</title>
+    <meta content="gemaakt door Mathieu Demeestere">
+    <link rel="stylesheet" href="Stijlen.css">
+</head>
+
+<body>
+    <h1>Blad Steen Schaar</h1>
+    <a target="_self" href="index.html">back<p></p></a>
+    <input type="text" placeholder="blad, steen of schaar" id="input">
+    <button type="button" onclick=RunAi();>Run</button>
+    
+    <p>
+    <label>always clear?</label>
+    <input type="checkbox" id = check>
+
+    <div id="script">
+        <script>
+            function RunAi() {
+                
+                //declaring var's
+                var body = document.getElementById("script");
+                var user = document.getElementById("input").value;
+                var AI =  Math.random(); 
+                var arr = ["blad", "steen", "schaar"];
+                var check = document.getElementById("check").checked;
+                
+                //check for clear
+                    if (check == true){
+                        body.innerHTML = "";
+                    }
+                //checking player
+                if (arr.includes(user)){
+                    body.innerHTML += "You chose: " + user + "<br>";
+                    awnser();
+                }
+                else{
+                    body.innerHTML += "wrong input, possible awnsers: " + arr + "<p>";
+                }
+                
+                
+                function awnser(){
+                //check AI
+                    if (AI <= 0.33){
+                        AI = arr[0];
+                        body.innerHTML +=  "AI chose: " +  AI + "<br>";
+                    }
+                    else if(AI <= 0.66){
+                        AI = arr[1];
+                        body.innerHTML +=  "AI chose: " +  AI + "<br>";
+                    }
+                    else if(AI <= 1){
+                        AI = arr[2];
+                        body.innerHTML += "AI chose: " + AI + "<br>";
+                    }
+                    else{
+                        body.innerHTML += "wtf happened, retry";
+                    }
+                    
+                    //check standings
+                    if (AI == user){
+                        body.innerHTML += "tie <p>";
+                    }
+                    
+                    else if(AI == "blad"){
+                        if(user == "steen"){
+                            body.innerHTML += "you lost <p>";
+                        }
+                        else if(user == "schaar"){
+                            body.innerHTML += "you won <p>";
+                        } 
+                        else{
+                        body.innerHTML += "wtf happened, retry";
+                        }
+                    }
+                    else if(AI == "steen"){
+                        if(user == "schaar"){
+                            body.innerHTML += "you lost <p>";
+                        }
+                        else if(user == "blad"){
+                            body.innerHTML += "you won <p>";
+                        }
+                        else{
+                        body.innerHTML += "wtf happened, retry";
+                        }
+                    }
+                    else if(AI == "schaar"){
+                        if(user == "blad"){
+                            body.innerHTML += "you lost <p>";
+                        }
+                        else if(user == "steen"){
+                            body.innerHTML += "you won <p>";
+                        } 
+                        else{
+                        body.innerHTML += "wtf happened, retry";
+                        }
+                    }
+                    else{
+                        body.innerHTML += "wtf happened, retry";
+                        }
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

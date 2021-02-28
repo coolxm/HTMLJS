@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<Head>
+    <title>test website for javascript</title>
+    <meta content="website made by Mathieu Demeestere to test Javascript">
+    <link rel="stylesheet" href="Stijlen.css">
+</Head>
+
+<body>
+
+    <div id=body>
+        <H1>Kwadrateren tot jouw cijfer</H1>
+        <a target="_self" href="index.html">back<p></a>
+
+        <input type="number" placeholder="het kwadraat van: " id="input">
+        <label for="check">
+            <p>only awnser?:
+        </label>
+        <input type="checkbox" id="check" checked>
+        <p>
+            <button type="button" id="button" onclick="run();">Do It</button>
+    </div>
+
+    <div id=write>
+        <script>
+            function run() {
+                var write = document.getElementById("write");
+                var input = document.getElementById("input").value;
+                var check = document.getElementById("check").checked;
+                var teller;
+                var uitkomst = "";
+                write.innerHTML = "";
+                //ik zie nu dat het sneller is met u manier, nu ja, ik ben koppig
+
+                for (teller = 0; teller <= input; teller++) {
+                    uitkomst = teller * teller + "<br>";
+
+                    if (check == true) {
+                        write.innerHTML = "";
+                    }
+
+                    write.innerHTML += uitkomst;
+                }
+
+            }
+        </script>
+    </div>
+</body>
+
+</html>

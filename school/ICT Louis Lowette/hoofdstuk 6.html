@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>
+    Louis Lowette
+    </title>
+</head>
+
+<body>
+    <input type="number" id="input" placeholder="jouw nummer: ">
+    <button type="button" onclick="start();">Start</button>
+
+    <p id="tekst"></p>
+    <script>
+        function start() {
+            var teller = 0;
+            var input = document.getElementById("input").value;
+            var antwoord = "";
+
+            while (teller <= input) {
+                antwoord = antwoord + teller * teller + "<br>";
+                
+                teller = teller + 1;
+                
+                document.getElementById("tekst").innerHTML = antwoord;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

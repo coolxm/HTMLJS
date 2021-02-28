@@ -1,0 +1,43 @@
+<!doctype HTML>
+<html>
+<head>
+    <link rel="stylesheet" href=Stijlen.css>
+    </head>
+<body>
+
+    <h1>De algemene gaswet (Het Volume berkenen)</h1>
+     <a target="_self" href="index.html">back</a>
+    <div id= form>
+        <label for="druk">Druk (p):</label>
+        <input type="number" id="druk" name="druk" required><br><br>
+        
+        <label for="volume">Volume (m2):</label>
+        <input type="number" id="volume" name="volume" required><br><br>
+        
+        <label for="temp">Temperatuur (K):</label>
+        <input type="number" id="temp" name="temp" required><br><br>
+
+        <button id="button">calculate</button>
+
+    </div>
+    <div id ="antw">
+    <script>
+       var button = document.getElementById("button");
+        var antw = document.getElementById("antw");
+        button.onclick = function() {
+            
+            const R = 8.31;
+            var druk = document.getElementById("druk").value;
+            var volume = document.getElementById("volume").value;
+            var temp = document.getElementById("temp").value;
+            var antwoord = ((druk * volume)/(temp*R))
+
+            
+            antw.innerHTML += "Er zijn " + antwoord + " deeltjes in dit gas <br />";
+            
+        }
+    </script>
+    </div>
+</body>
+
+</html>

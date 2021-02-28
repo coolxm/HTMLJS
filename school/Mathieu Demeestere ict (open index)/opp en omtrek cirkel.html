@@ -1,0 +1,35 @@
+<!doctype HTML>
+<html>
+<head>
+    <title>test website for javascript</title>
+    <meta content="website made by Mathieu Demeestere to test Javascript">
+    <link rel="stylesheet" href=Stijlen.css>
+    </head>
+<body>
+     <a target="_self" href="index.html">back<p></a>
+    <label for="straal">straal</label>
+    <input type="number" id="straal" required min=0>
+    <button type="button" onclick="func();">bereken</button>
+    
+    <div id=elm>
+    <script>
+        var elm = document.getElementById("elm");
+        function func(){
+            var straal = document.getElementById("straal").value;
+            const pi = 3.14159;
+            
+            var oppervlakte = (2 * straal * pi);
+            var omtrek = (straal * straal * pi);
+            
+        elm.innerHTML += "<p> De omtrek is " + omtrek + "<br>" + "De oppervlakte is " + oppervlakte;
+            
+            
+        }
+    
+    </script>
+        
+    </div>
+
+</body>
+
+</html>

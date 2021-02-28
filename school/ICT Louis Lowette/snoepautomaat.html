@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Alexander Huys</title>
+</head>
+
+<body>
+
+        <input type="number" id="nummer" placeholder="input">
+        <input type="number" id="invoer" placeholder="geld invoer" min="0">
+
+	 <button onclick="snoep()">snoep</button>
+
+	 <p id="tekst"></p>
+	 
+	    <script> function snoep() {
+            
+		var input = document.getElementById("nummer").value; 
+		var betaald = document.getElementById("invoer").value;
+		
+		if (input == 1){
+			var item = "worst";
+			var prijs = 1.50;
+		}
+		else if (input == 2){
+			var item = "poepjes";
+			var prijs = 0.50;
+		}    
+		else if (input == 3){
+			var item = "Bueno";
+			var prijs = 1.00;
+		}    
+		else if (input == 4){
+			var item = "zuurtjes";
+			var prijs = 1.50;
+		}    
+		else if (input == 5){
+			var item = "nootjes";
+			var prijs = 2.50;
+		}    
+		else if (input == 6){
+			var item = "fanta";
+			var prijs = 2.00;
+		}    
+		else if (input == 7){
+			var item = "sprite";
+			var prijs = 2.00;
+		}    
+		else if (input == 8){
+			var item = "cola";
+			var prijs = 2.00;
+		}    
+		else if (input == 9){
+			var item = "chips";
+			var prijs = 1.50;
+		}    
+		else if (input == 10){
+			var item = "sprite";
+			var prijs = 2.00;
+		}    
+
+		document.getElementById("tekst").innerHTML += "gekozen: " + item + " prijs: €" + prijs + "<br>"
+		+ "betaald: €" + betaald + "<br>";
+
+		var teruggave = betaald - prijs;
+		    
+		if (teruggave < 0){
+			  document.getElementById("tekst").innerHTML += "niet genoeg betaald <p>";
+		}
+		else {
+			    document.getElementById("tekst").innerHTML += "€" + teruggave + " terug <p>";
+		
+		}
+	    }
+	</script>     
+    <br>
+
+</body>
+
+</html>
